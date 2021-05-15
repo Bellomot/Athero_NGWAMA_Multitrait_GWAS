@@ -41,14 +41,14 @@ Dependency files:
 
   
 Instructions on running the eQTL colocalization pipeline with files in the (EQTL_COLOC_CONFIG) directory:
-  - EQTL Colocalizer pipeline information can be found on <brian github link>. In brief, create an analysis directory in which individual folders for each SNP output will be saved. In that analysis directory, please save the following items:
+  - EQTL Colocalizer pipeline information can be found at https://github.com/bychen9/eQTL_colocalizer. In brief, create an analysis directory in which individual folders for each SNP output will be saved. In that analysis directory, please save the following items:
     - Save the desired eQTL colocalization script (eqtl_colocalizer.R). 
     - Save the desired configuration file (eQTL_config_template.R) corresponding to the GWAS file you would like to use for colocalizatin with eQTL form GTEx v8.
     - Save the shell script (bash_eQTL_COLOC_loop.sh) that contains a loop to create a folder and run the eqtl_colocalizer.R script for each SNP you wish to colocalize with eQTL data.  
 - Lastly, execute the shell script in the analysis directory (eg ./bash_eQTL_COLOC_loop.sh). 
   
 Code file:
-  - EQTL Colocalizer full code can be found on <brian github link>. 
+  - EQTL Colocalizer full code can be found at https://github.com/bychen9/eQTL_colocalizer. 
   - eqtl_colocalizer.R => This script will take a list of SNPs (eg CAD_15_COMBO_ALL_LEADSNPS.txt or PAD_15_COMBO_ALL_LEADSNPS.txt) with the following information: chromosome, start position in hg37, stop position in hg37, and rs number corresponding to the SNP. These SNPs will be extracted from one summary statistic file defined in the configuration file with the following information: rs number corresponding to the SNP, effect allele, alternate allele, effect allele frequency, standard error, P value, beta, position in hg37, chromosome, and number of participants. The information from the sumary statistics will be colocalized with eQTL data from GTEx v8. 
   - Known errors in this file include if the filename field for an eGene-Tissue pair is NA. To ensure this is the case, check the log files for the printout "This tissue is not available in the all pairs files currently". 
 
@@ -57,5 +57,5 @@ Individual configuration file: the configuration files here were used to run 2 s
 
 Dependency files:
   - data_maf0.01_rs_ref => 1000 Genome european reference files downloaded from (http://fileserve.mrcieu.ac.uk/ld/data_maf0.01_rs_ref.tgz). 
-  - GTEx_v8_Tissue_Summary_with_filenames.csv => A file of GTEx single trait eQLTs from the GTEx online GUI. More information can be found on <brian github link>. 
-  - GTEx_Analysis_v8_eQTL_tabix => Tabix files for all SNPs downloaded from GTEx. More information can be found on <brian github link>. 
+  - GTEx_v8_Tissue_Summary_with_filenames.csv => A file of GTEx single trait eQLTs from the GTEx online GUI. More information can be found at https://github.com/bychen9/eQTL_colocalizer. 
+  - GTEx_Analysis_v8_eQTL_tabix => Tabix files for all SNPs downloaded from GTEx. More information can be found at https://github.com/bychen9/eQTL_colocalizer. 
