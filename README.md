@@ -10,10 +10,10 @@ Instructions on running the NGWAMA multi-trait GWAS pipeline:
   - Lastly, execute the NGWAMA multi-trait GWAS in the analysis directory (eg Rscript ./NGWAMA_SCRIPT.R). 
 
 Code file:
-  - NGWAMA_SCRIPT.R => This script will take in any n number of hg37 GWAS summary statistic files with the following information for each SNP: rs number corresponding to the SNP, effect allele, alternate allele, effect allele frequency, standard error, P value, beta, position in hg37, and chromosome. These files will be used to perform a multi-trait NGWAMA scan to detect novel loci associated with all traits. 
+  - NGWAMA_SCRIPT.R => This script will take in any n number of GRCh37 GWAS summary statistic files with the following information for each SNP: rs number corresponding to the SNP, effect allele, alternate allele, effect allele frequency, standard error, P value, beta, position in GRCh37, and chromosome. These files will be used to perform a multi-trait NGWAMA scan to detect novel loci associated with all traits. 
   - Known errors in this file include early exit of the script due to absence of novel SNPs. To ensure this is the case, check the log files for the printout "No novel loci detected with this scan". 
 
-Individual configuration files: the configuration files here were used to perform 15 different scans of combinations of atherosclerotic traits. NOTE: if you want to replicate our analysis, rename the configuration file (NGWAMA_CONFIG.R), change the directories to the locations of the hg37 GWAS summary statistic files, and follow the instructions above for running the NGWAMA multi-trait GWAS pipeline above. 
+Individual configuration files: the configuration files here were used to perform 15 different scans of combinations of atherosclerotic traits. NOTE: if you want to replicate our analysis, rename the configuration file (NGWAMA_CONFIG.R), change the directories to the locations of the GRCh37 GWAS summary statistic files, and follow the instructions above for running the NGWAMA multi-trait GWAS pipeline above. 
   - PAD_BMI_NGWAMA_CONFIG.R => The configuration file for peripheral artery disease and body mass index bivariate GWAS. 
   - PAD_CAD_BMI_NGWAMA_CONFIG.R => The configuration file for peripheral artery disease, coronary artery disease, and body mass index trivariate GWAS. 
   - PAD_CAD_HDL_NGWAMA_CONFIG.R => The configuration file for peripheral artery disease, coronary artery disease, and high density lipoprotein trivariate GWAS. 
@@ -37,7 +37,6 @@ Dependency files:
   - EUR.final => A file containing the 503 population IDs associated with 1KG Phase III vcf, which was self-generated. 
   - EUR.final.plink => A plink file than contains data for only the individuals from EUR.final. 
   - GWAShg37.bed => BED file from the January 2019 GWAS catalog flat file converted into a BED file. 
-  - allChrMergedClumped.bed => ???
 
 
   
@@ -58,10 +57,5 @@ Individual configuration file: the configuration files here were used to run 2 s
 
 Dependency files:
   - data_maf0.01_rs_ref => 1000 Genome european reference files downloaded from (http://fileserve.mrcieu.ac.uk/ld/data_maf0.01_rs_ref.tgz). 
-  - GTEx_v8_Tissue_Summary_with_filenames.csv => A file of GTEx single trait eQLTs from the GTEx online GUI. This data was downloaded and the concatenated file was self generated. ???
-  - GTEx_Analysis_v8_eQTL_tabix => This tabix file was created from the GTEx_v8_Tissue_Summary_with_filenames.csv. ???
-  
-
-
-  
-  
+  - GTEx_v8_Tissue_Summary_with_filenames.csv => A file of GTEx single trait eQLTs from the GTEx online GUI. More information can be found on <brian github link>. 
+  - GTEx_Analysis_v8_eQTL_tabix => Tabix files for all SNPs downloaded from GTEx. More information can be found on <brian github link>. 
